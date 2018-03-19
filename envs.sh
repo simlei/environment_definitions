@@ -1,5 +1,5 @@
 
-ENVIRONMENTS_PATH="$LOCALBASH_DIR/envs"
+ENVIRONMENTS_PATH="$LOCALBASH/envs"
 
 function splitpath()
 {
