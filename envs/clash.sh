@@ -1,2 +1,1 @@
- 
-export $CLASHCONTROL=/home/leis_si/soma-test/clashcontrol
+source $CLASHCONTROL/env/clash.sh
