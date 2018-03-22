@@ -1,20 +1,20 @@
+# PRE-REQUISITES: dlrmain.sh
  
 alias prt=~/bin/print2x2x1.sh
 
-usbdev() {
+function usbdev() {
   ls /dev/serial/by-path
 }
 
+# Usage: envtool FORMAT Software1 Software2
+# see available software shortcut flags below, e.g. -opencv
+# e.g bash_setup_env.sh embed_sh -opencv -ln -rkcam > env_software.rc
+# (MYFILE="bash_env_exec.sh"; bash_setup_env.sh sh -opencv -ln -rkcam > $MYFILE; chmod +x $MYFILE)
+# formaats: see rmpm_do, e.g. "embed_sh" or "sh"
 
 function envtool
 {
-    # PRE-REQUISITES: LN_VERSION variable defined
-    
-    # Usage: envtool FORMAT Software1 Software2
-    # see available software shortcut flags below, e.g. -opencv
-    # e.g bash_setup_env.sh embed_sh -opencv -ln -rkcam > env_software.rc
-    # (MYFILE="bash_env_exec.sh"; bash_setup_env.sh sh -opencv -ln -rkcam > $MYFILE; chmod +x $MYFILE)
-    # formaats: see rmpm_do, e.g. "embed_sh" or "sh"
+
 
     if [ -z "$1" ]
     then
@@ -36,4 +36,10 @@ function envtool
     MY_ARGS=$(sed "$SUBSTITUTION" <<< "$*")
 
     rmpm_do env --env-format $MY_ARGS
+}
+
+alias prt=~/bin/print2x2x1.sh
+
+function usbdev() {
+  ls /dev/serial/by-path
 }

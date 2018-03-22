@@ -11,8 +11,5 @@ helpgrep() {
   ${cmd} --help | grep -e "$opt"
 }
 
-alias prt=~/bin/print2x2x1.sh
-
-usbdev() {
-  ls /dev/serial/by-path
-}
+function extension() { fn=$(basename "$1"); echo "${fn##*.}"; }
+function filename() { fn=$(basename "$1"); echo "${fn%.*}"; }

@@ -1,0 +1,9 @@
+https://unix.stackexchange.com/questions/266627/bash-source-without-polluting-own-namespace-get-variables-from-other-scripts
+$ grepvars='(license)|(depends)|(makedepends)|(url)|(pkgdesc)|(pkgver)'
+$
+$ eval $(grep -Pzo "^(${grepvars})=\([^\)\(\`]*\)|^(${grepvars})=\"[^\"\(\`]*\"|^(${grepvars})='\''[^'\'']*'\''|^(${grepvars})=[^\s;\(\`]*" /tmp/above_mentioned_file)
+$ echo $url
+https://www.mozilla.org/firefox/
+$
+$ echo ${depends[@]}
+gtk3 gtk2 mozilla-common libxt startup-notification mime-types dbus-glib alsa-lib ffmpeg2.8 desktop-file-utils hicolor-icon-theme libvpx icu libevent nss hunspell sqlite ttf-font

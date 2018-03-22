@@ -1,6 +1,3 @@
-
-ENVIRONMENTS_PATH="$LOCALBASH/envs"
-
 function splitpath()
 {
   sed 's/:/\n/g'
@@ -29,27 +26,3 @@ function showpath()
   echo "--- PATH"
   echo $PATH | splitpath
 }
-
-function envfile 
-{
-  echo "$ENVIRONMENTS_PATH/$1.sh"
-}
-
-function pushenv
-{
-  NEWPROMPTLINE="PS1=\"\$PS1 $1 > \"" 
-  echo "loading environment $1 $NEWPROMPTLINE"
-  $BASH --rcfile <(cat ~/.bashrc; cat $(envfile $1); echo $NEWPROMPTLINE)
-}
-
-function popenv
-{
-  exit
-}
-
-function withenv
-{
-  source $(envfile $1)
-  ${@:2:$#}
-}
-

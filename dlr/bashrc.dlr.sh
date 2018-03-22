@@ -1,5 +1,4 @@
-
-export LOCALBASH_DLR=$LOCALBASH/dlr
+export LOCALBASH_DLR_DIR=$LOCALBASH_DIR/dlr
  
-source $LOCALBASH_DLR/dlrgoodies.sh
-source $LOCALBASH_DLR/dlrmain.sh
+source "$LOCALBASH_DLR_DIR/dlrutils.sh"
+source "$LOCALBASH_DLR_DIR/dlrmain.sh"
