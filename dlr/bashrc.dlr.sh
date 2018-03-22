@@ -6,9 +6,9 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # L.a.N.
 
-export LN_VERSION="0.10.1"
-export LN_MAN="/volume/software/common/packages/links_and_nodes/$LN_VERSION/scripts/ln_manager"
-export LN_BASE="/volume/software/common/packages/links_and_nodes/$LN_VERSION"
+export LaN_VERSION="0.10"
+export LaN_MAN="/volume/software/common/packages/links_and_nodes/$LaN_VERSION/scripts/ln_manager"
+export LaN_BASE="/volume/software/common/packages/links_and_nodes/$LaN_VERSION"
 
 # CLASH project
 
