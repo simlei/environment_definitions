@@ -11,5 +11,8 @@ helpgrep() {
   ${cmd} --help | grep -e "$opt"
 }
 
+# resets the cmake build directory.
+alias cmake_re="cd .. && rm -rf build && mkdir build && cd build"
+
 function extension() { fn=$(basename "$1"); echo "${fn##*.}"; }
 function filename() { fn=$(basename "$1"); echo "${fn%.*}"; }

@@ -7,27 +7,27 @@ BEGIN {
 }
 {
     print $0 > ENVIRON["EXTRACTOR_LOG_FILE"]
-#     if (match($0,/export LN_MANAGER=([0-9\.:]*)/,m)) 
-#     {
-#         print m[0] > CFGOUT;
-#         opened = 1;
-#         #close(CFGOUT);
-#         print ">>> Extracted " m[0] " as LN instance!"
-#     }
-#     if (match($0,/export PYTHONPATH=(.*)/,m)) 
-#     {
-#         print m[0] > CFGOUT;
-#         opened = 1;
-#         #close(CFGOUT);
-#         print ">>> Extracted " m[0] " as PYTHONPATH!"
-#     }
-    if (match($0,/export ([A-Za-z][a-zA-Z0-9_]*)=(.*)/,m)) 
+    if (match($0,/export (LN_MANAGER)=([0-9\.:]*)/,m)) 
     {
         print m[0] > CFGOUT;
         opened = 1;
         #close(CFGOUT);
-        print ">>> Extracted " m[1]
+        print ">>> Extracted " m[2] " as " m[1] "!"
     }
+    if (match($0,/export (LN_MESSAGE_DEFINITION_DIRS)=(.*)/,m)) 
+    {
+        print m[0] > CFGOUT;
+        opened = 1;
+        #close(CFGOUT);
+        print ">>> Extracted " m[2] " as " m[1] "!"
+    }
+#     if (match($0,/export ([A-Za-z][a-zA-Z0-9_]*)=(.*)/,m)) 
+#     {
+#         print m[0] > CFGOUT;
+#         opened = 1;
+#         #close(CFGOUT);
+#         print ">>> Extracted " m[1]
+#     }
     if (! match($0,/export .*/,m)) 
     {
         if(opened == 1) 
