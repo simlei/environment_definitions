@@ -1,5 +1,5 @@
 source $LOCALBASH_DIR/default.bashrc
-source $LOCALBASH_DIR/dlr/aliases.sh
+source $DLRBASH_DIR/aliases.sh
 
 export EDITOR=$(which kate)
 

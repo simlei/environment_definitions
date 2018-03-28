@@ -1,0 +1,34 @@
+#!/usr/bin/env python3
+
+import gi
+gi.require_version('Gtk', '3.0')
+
+from gi.repository import Gtk
+from gi.repository import GLib
+
+"""
+This is a self-destroying window, to "feed" Unity a fake-window, preventing
+the launcher to show a spinning wheel, waiting for a window to appear.
+Include the command to run this script at the end of the (your) script.
+"""
+
+def timer_cb():
+    Gtk.main_quit()
+    return False
+
+def show_cb(widget, data=None):
+    GLib.timeout_add(500, timer_cb)
+
+def fakewindow():
+    window = Gtk.Window()
+    # make our window transparent
+    window.set_opacity(0)
+    window.set_default_size(0,0)
+
+    window.connect("show", show_cb)
+
+    window.show_all()
+
+    Gtk.main()
+
+fakewindow()

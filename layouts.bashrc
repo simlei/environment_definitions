@@ -1,0 +1,2 @@
+export DLRBASH_DIR="$LOCALBASH_DIR/dlr"
+export SP3BASH_DIR="$LOCALBASH_DIR/sp3"
