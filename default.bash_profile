@@ -1,3 +1,4 @@
-if [ -f ~/.bashrc ]; then
-   source ~/.bashrc
-fi
+source "$LOCALBASH/profile/stdlib.sh"
+
+PATH_add "$HOME/bin"
+PATH_add "$HOME/.local/bin"
