@@ -37,4 +37,18 @@ function copy_
 
 
 
-ln -s "$LOCALBASH_DIR/configurations/direnv/direnvrc" "$HOME/.config/direnv/direnvrc"
+# ln -s "$LOCALBASH_DIR/configurations/direnv/direnvrc" "$HOME/.config/direnv/direnvrc"
+
+# TODO: 
+# - separate login and interactive shells, clear up role of direnv. direnv must be selfcontained and if it is not executed, no harm.
+# - setup script in python or make?
+# - custom VIM setup baked in
+
+# use direnv executable to whip bash into submission?
+
+# Problems:
+# things like stdlib not sourced before dlr script
+# pyenv was not found, initialization in .envrc?? Problematic probably
+# bash_profile not loaded -> nothing worked
+# endless loop in .direnv
+# stdlib not picked up

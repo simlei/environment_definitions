@@ -1,3 +1,8 @@
+source "$LOCALBASH_DIR/profile/stdlib.sh"
+
+PATH_add "/volume/software/common/bin/osl42-x86_64"
+PATH_add "/usr/local/bin"
+
 source $LOCALBASH_DIR/default.bashrc
 source $DLRBASH_DIR/aliases.sh
 
